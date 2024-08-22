@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<xliff version="1.1">
+<file>
+<body>
+    <!-- LEGENDS -->
+    <trans-unit id="tl_form.maileon_legend">
+        <target>Maileon</target>
+    </trans-unit>
+    <!-- FIELDS -->
+    <trans-unit id="tl_form.sendToMaileon.0">
+        <target>An Maileon senden</target>
+    </trans-unit>
+    <trans-unit id="tl_form.sendToMaileon.1">
+        <target>Senden Sie die Formulardaten an Maileon, um einen Kontakt zu erstellen oder zu aktualisieren und optional einen Double-Opt-In-Prozess (DOI) auszulösen.</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_api_key.0">
+        <target>API-Schlüssel</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_api_key.1">
+        <target>Bitte geben Sie Ihren API-Schlüssel für Maileon ein.</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_permission.0">
+        <target>Berechtigung</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_permission.1">
+        <target>Geben Sie die initiale Berechtigung an, die dem Kontakt zugewiesen werden soll.</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_sync_mode.0">
+        <target>Synchronisationsmodus</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_sync_mode.1">
+        <target>Legt den Synchronisierungsmodus für den Fall fest, dass bereits ein Kontakt mit der angegebenen E-Mail-Adresse existiert.</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_src.0">
+        <target>Quelle</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_src.1">
+        <target>Eine Bezeichnung, die die Quelle des Kontakts beschreiben soll. Falls angegeben, wird die Bezeichnung mit dem DOI-Prozess gespeichert.</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_use_doi.0">
+        <target>Double-Opt-In (DOI)</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_use_doi.1">
+        <target>Gibt an, ob ein Double-Opt-In-Verfahren für den erstellten Kontakt gestartet werden soll.</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_doiplus.0">
+        <target>Double-Opt-In Plus (DOI-Plus)</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_doiplus.1">
+        <target>Wenn der DOI-Prozess erfolgreich ist, kann Maileon die Öffnungen und Klicks des Kontakts verfolgen.</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_doimailing.0">
+        <target>Double-Opt-In Mailing (DOI-Mailing)</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_doimailing.1">
+        <target>Gibt den DOI-Mailing-Schlüssel des (aktiven) DOI-Mailings an, das verwendet werden soll. Beachten Sie, dass dies nicht die ID der DOI-Mail ist, sondern der Schlüssel, der in der API oder UI angegeben werden kann. Wird er nicht angegeben, wird das Standard-DOI-Mailing verwendet.</target>
+    </trans-unit>
+    <!-- OPTIONS -->
+    <trans-unit id="tl_form.maileon_permissions.1">
+        <target>keine</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_permissions.2">
+        <target>einfaches Opt-in</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_permissions.3">
+        <target>bestätigtes Opt-in</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_permissions.4">
+        <target>doppeltes Opt-in</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_permissions.5">
+        <target>doppeltes Opt-in plus</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_permissions.6">
+        <target>andere</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_sync_modes.1">
+        <target>aktualisieren (die Kontaktdaten werden aktualisiert)</target>
+    </trans-unit>
+    <trans-unit id="tl_form.maileon_sync_modes.2">
+        <target>ignorieren (es wird nichts unternommen)</target>
+    </trans-unit>
+</body>
+</file>
+</xliff>

@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+
+    numero2_maileon.api.maileon:
+        class: numero2\MaileonBundle\API\MaileonApi
+        public: true
+        arguments:
+            - '@http_client'
+            - '@monolog.logger.contao.error'
+

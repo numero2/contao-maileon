@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xliff version="1.1">
+<file>
+<body>
+    <!-- FIELDS -->
+    <trans-unit id="tl_form_field.maileon_field_name.0">
+        <target>Feld bei Maileon</target>
+    </trans-unit>
+    <trans-unit id="tl_form_field.maileon_field_name.1">
+        <target>Wählen Sie das passende Feld aus Maileon aus. Wenn kein Feld ausgewählt wird, wird dieses Feld nicht an Maileon übertragen.</target>
+    </trans-unit>
+</body>
+</file>
+</xliff>

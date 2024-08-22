@@ -1,0 +1,24 @@
+services:
+    _defaults:
+        autoconfigure: true
+        public: true
+
+
+    numero2_maileon.listener.data_container.form_field:
+        class: numero2\MaileonBundle\EventListener\DataContainer\FormFieldListener
+        arguments:
+            - '@request_stack'
+            - '@contao.routing.scope_matcher'
+            - '@database_connection'
+            - '@numero2_maileon.api.maileon'
+            - '@translator'
+
+
+    numero2_maileon.listener.hook.form:
+        class: numero2\MaileonBundle\EventListener\Hook\FormListener
+        arguments:
+            - '@request_stack'
+            - '@database_connection'
+            - '@contao.insert_tag.parser'
+            - '@numero2_maileon.api.maileon'
+            - '@monolog.logger.contao.general'
