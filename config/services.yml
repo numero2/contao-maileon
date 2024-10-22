@@ -11,3 +11,9 @@ services:
             - '@http_client'
             - '@monolog.logger.contao.error'
 
+
+    numero2_maileon.cron.send_integration_event:
+        class: numero2\MaileonBundle\Cron\SendIntegrationEventCron
+        arguments:
+            - '@database_connection'
+            - '@numero2_maileon.api.maileon'

@@ -92,3 +92,7 @@ $GLOBALS['TL_DCA']['tl_form']['fields']['maileon_doiplus'] = [
 ,   'eval'              => ['tl_class'=>'w50 m12']
 ,   'sql'               => ['type'=>'boolean', 'default'=>false]
 ];
+
+$GLOBALS['TL_DCA']['tl_form']['fields']['maileon_intevt'] = [
+    'sql'               => "varchar(32) NOT NULL default ''"
+];

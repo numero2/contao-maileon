@@ -4,6 +4,12 @@ services:
         public: true
 
 
+    numero2_maileon.listener.data_container.form:
+        class: numero2\MaileonBundle\EventListener\DataContainer\FormListener
+        arguments:
+            - '@database_connection'
+            - '@numero2_maileon.api.maileon'
+
     numero2_maileon.listener.data_container.form_field:
         class: numero2\MaileonBundle\EventListener\DataContainer\FormFieldListener
         arguments:

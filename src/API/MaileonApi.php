@@ -12,7 +12,9 @@
 
 namespace numero2\MaileonBundle\API;
 
+use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\System;
+use Exception;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use Symfony\Component\HttpClient\HttpOptions;
@@ -126,6 +128,77 @@ class MaileonApi {
         }
 
         return null;
+    }
+
+
+    /**
+     * Get the account information
+     *
+     * @return array
+     */
+    public function getAccountInformation(): array {
+
+        $fieldInfo = $this->send('GET', '/account/info');
+
+        if( $fieldInfo['status'] === 200 ) {
+            return $fieldInfo['body'] ?? [];
+        }
+
+        return [];
+    }
+
+
+    /**
+     * Send an integration event
+     *
+     * @param string $event
+     *
+     * @return bool
+     *
+     * @throws RuntimeException If no API key was set
+     */
+    public function sendIntegrationEvent( string $event ): bool {
+
+        if( !in_array($event, ['activated', 'deactivated', 'heartbeat']) ) {
+            return false;
+        }
+
+        if( $this->apiKey === null ) {
+            $this->logger->error('Maileon API call cannot be performed without setting an API key.');
+            throw new RuntimeException('Maileon API key not set');
+        }
+
+        $plugin = '10019';
+        $checkSum = 'IjNa0SLucj0EMlt9xh9';
+
+        if( version_compare(ContaoCoreBundle::getVersion(), '5.0.0', '<') ) {
+            $plugin = '10018';
+            $checkSum = 'Br5Eh41Trmsv8aNeR6K';
+        }
+
+        $account = $this->getAccountInformation();
+        if( empty($account) ) {
+            return false;
+        }
+
+        $accountID = $account['id'];
+        $clientHash = substr($account['name'], 0, 1).substr($account['name'], -1);
+
+        try {
+
+            $url = 'https://integrations.maileon.com/xsic/tx.php?pluginID='.$plugin.'&accountID='.$accountID.'&checkSum='.$checkSum.'&clientHash='.$clientHash.'&event='.$event;
+            $response = $this->client->request('GET', $url);
+
+            if( $response->getStatusCode() >= 400 ) {
+                return false;
+            }
+
+        } catch( Exception $e ) {
+
+            return false;
+        }
+
+        return true;
     }
 
 
