@@ -187,7 +187,7 @@ class MaileonApi {
         try {
 
             $url = 'https://integrations.maileon.com/xsic/tx.php?pluginID='.$plugin.'&accountID='.$accountID.'&checkSum='.$checkSum.'&clientHash='.$clientHash.'&event='.$event;
-            $response = $this->client->request('GET', $url);
+            $response = $this->client->request('GET', $url, ['timeout' => 10]);
 
             if( $response->getStatusCode() >= 400 ) {
                 return false;

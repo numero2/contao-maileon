@@ -11,7 +11,7 @@ Adds the possibility to create contacts at Maileon by submitting a form.
 
 ## System requirements
 
-* [Contao 5.3 or newer](https://github.com/contao/contao)
+* [Contao 4.13 or newer](https://github.com/contao/contao)
 
 
 ## Installation & Configuration
